@@ -15,6 +15,25 @@ defmodule BugSlotWeb.CoreComponents do
   import BugSlotWeb.Gettext
 
   @doc """
+  Example bug
+  """
+
+  # Comment the line below to crash the genserver
+  attr :anything, :string
+  slot :foo
+
+  def bugged_component(assigns) do
+    ~H"""
+    <div>
+      <%= render_slot(@inner_block) %>
+      <div :for={item <- @items}>
+        <%= render_slot(@foo, item) %>
+      </div>
+    </div>
+    """
+  end
+
+  @doc """
   Renders a modal.
 
   ## Examples
