@@ -19,7 +19,7 @@ defmodule BugSlotWeb.CoreComponents do
   """
 
   # Comment the line below to crash the genserver
-  attr :anything, :string
+  # attr :anything, :string
   slot :foo
 
   def bugged_component(assigns) do
